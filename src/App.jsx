@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import MyGames from "./pages/MyGames";
-import Search from "./pages/Search";
+import Search from "./pages/SearchBar";
 
 
 function App() {
