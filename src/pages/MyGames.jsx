@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import GameCard from "../components/GameCard";
 
-const apiURL = "http://localhost:5005/games";
+const apiURL = import.meta.env.VITE_SERVER_URL;
 
 function MyGames() {
   const [games, setGames] = useState([]);
@@ -46,8 +46,8 @@ function MyGames() {
           <GameCard
             key={game.id}
             game={game}
-            showDeleteButton={true}
-            showEditButton={true}
+            showDeleteBtn={true}
+            showEditBtn={true}
             onDelete={deleteGame}
           />
         );
