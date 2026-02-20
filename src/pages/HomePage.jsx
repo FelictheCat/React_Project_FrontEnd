@@ -3,6 +3,8 @@ import axios from "axios";
 import GameCard from "../components/GameCard";
 
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
+const apiURL = import.meta.env.VITE_SERVER_URL;
+
 
 function HomePage() {
 
@@ -40,7 +42,7 @@ function HomePage() {
 
     };
 
-    axios.post("http://localhost:5005/games", newGame)
+    axios.post(apiURL, newGame)
       .then(() => {
         console.log("Added!");
       })

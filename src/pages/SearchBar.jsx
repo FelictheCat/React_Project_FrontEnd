@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
+const apiURL = import.meta.env.VITE_SERVER_URL;
+
 
 function Search() {
   const [fetching, setFetching] = useState(false);
@@ -42,7 +44,7 @@ function Search() {
       rating: 0,
     };
     axios
-      .post("http://localhost:5005/games", newGame)
+      .post(apiURL, newGame)
       .then(() => {
         console.log("Game added!");
       })
