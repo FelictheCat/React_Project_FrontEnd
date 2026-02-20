@@ -47,6 +47,7 @@ function MyGames() {
             key={game.id}
             game={game}
             showDeleteButton={true}
+            showEditButton={true}
             onDelete={deleteGame}
           />
         );

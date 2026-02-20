@@ -1,19 +1,12 @@
 import { Link } from "react-router-dom";
 
-function SideBar({ query, setQuery }) {
-
+function SideBar() {
   return (
     <aside className="sidebar">
-
-      <input
-        type="text"
-        placeholder="Search games..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-
+      <Link to="/">Home</Link>
+      <Link to="/search">Search</Link>
+      <Link to="/my-games">My List</Link>
       <Link to="/about">About</Link>
-
     </aside>
   );
 }

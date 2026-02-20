@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 
-function GameCard({ game, showAddBtn, onAdd, showDeleteBtn, onDelete }) {
-
+function GameCard({
+  game,
+  showAddBtn,
+  onAdd,
+  showDeleteBtn,
+  onDelete,
+  showEditBtn,
+}) {
   return (
     <div className="game-card">
-
-      <Link to={`/games/${game.id}`}>
+      <Link to={`/games/${game.rawgId || game.id}`}>
         <h3>{game.name || game.title}</h3>
       </Link>
 
@@ -20,20 +25,18 @@ function GameCard({ game, showAddBtn, onAdd, showDeleteBtn, onDelete }) {
       <p>Rating: {game.rating}</p>
 
       {showAddBtn && (
-        <button onClick={() => onAdd(game)}>
-          Add to My List
-        </button>
+        <button onClick={() => onAdd(game)}>Add to My List</button>
       )}
       {showDeleteBtn && (
-        <button onClick={() => onDelete(game.id)}>
-          Delete
-        </button>
+        <button onClick={() => onDelete(game.id)}>Delete</button>
+      )}
+      {showEditBtn && (
+        <Link to={`/edit/${game.id}`}>
+          <button>Edit</button>
+        </Link>
       )}
     </div>
   );
 }
 
 export default GameCard;
-
-
-
