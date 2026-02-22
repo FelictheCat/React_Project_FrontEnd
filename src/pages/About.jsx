@@ -1,7 +1,6 @@
 function About() {
-
   return (
-    <div>
+    <div className="page-container">
       <h2>About GameTracker</h2>
 
       <p>
@@ -18,7 +17,6 @@ function About() {
         This project was built using React, React Router,
         Axios, JSON Server, and the RAWG API.
       </p>
-
     </div>
   );
 }

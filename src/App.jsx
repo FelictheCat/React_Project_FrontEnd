@@ -5,22 +5,22 @@ import MyGames from "./pages/MyGames";
 import Search from "./pages/SearchBar";
 import EditGame from "./pages/EditGame";
 import GameDetails from "./pages/GameDetails";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
 import About from "./pages/About";
 import SideBar from "./components/SideBar";
 
+import "./App.css";
 
 
 
 function App() {
   return (
-      <div>
-        <BrowserRouter>
-      <div className="sidebar">
+          <BrowserRouter>
+      <div className="app-layout">
+
         <SideBar />
-      </div>
-          <NavBar />
-          
+
+        <div className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
@@ -29,8 +29,10 @@ function App() {
             <Route path="/edit/:id" element={<EditGame />} />
             <Route path="/games/:id" element={<GameDetails />} />
           </Routes>
-        </BrowserRouter>
+        </div>
+
       </div>
+    </BrowserRouter>
   );
 }
 

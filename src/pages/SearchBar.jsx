@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import GameCard from "../components/GameCard";
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 const apiURL = import.meta.env.VITE_SERVER_URL;
-
 
 function Search() {
   const [fetching, setFetching] = useState(false);
@@ -20,7 +20,7 @@ function Search() {
         params: {
           key: API_KEY,
           search: query,
-          page_size: 10,
+          page_size: 50,
         },
       })
       .then((response) => {
@@ -54,7 +54,7 @@ function Search() {
   };
 
   return (
-    <div>
+  <div className="page-container">
       <h3>Search Games</h3>
 
       <input
@@ -66,17 +66,18 @@ function Search() {
 
       {fetching && <p>Loading...</p>}
 
-      {games.map((game) => {
-        return (
-          <div key={game.id}>
-            <h4>{game.name}</h4>
-            {game.background_image && (
-              <img src={game.background_image} width="250px" />
-            )}
-            <button onClick={() => addToList(game)}>Add</button>
-          </div>
-        );
-      })}
+      <div className="wrap-grid">
+        {games.map((game) => {
+          return (
+            <GameCard
+              key={game.id}
+              game={game}
+              showAddBtn={true}
+              onAdd={addToList}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

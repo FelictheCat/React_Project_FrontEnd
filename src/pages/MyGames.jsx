@@ -8,7 +8,7 @@ function MyGames() {
   const [games, setGames] = useState([]);
   const [fetching, setFetching] = useState(true);
 
-  useEffect(() => {
+  const fetchGames = () => {
     axios
       .get(apiURL)
       .then((response) => {
@@ -19,6 +19,10 @@ function MyGames() {
         console.log(error);
         setFetching(false);
       });
+  };
+
+  useEffect(() => {
+    fetchGames();
   }, []);
 
   const deleteGame = (id) => {
@@ -40,18 +44,19 @@ function MyGames() {
   return (
     <div>
       <h2>My Games</h2>
-
-      {games.map((game) => {
-        return (
-          <GameCard
-            key={game.id}
-            game={game}
-            showDeleteBtn={true}
-            showEditBtn={true}
-            onDelete={deleteGame}
-          />
-        );
-      })}
+      <div className="wrap-grid">
+        {games.map((game) => {
+          return (
+            <GameCard
+              key={game.id}
+              game={game}
+              showDeleteBtn={true}
+              showEditBtn={true}
+              onDelete={deleteGame}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

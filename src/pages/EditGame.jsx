@@ -70,18 +70,25 @@ function EditGame() {
   }
 
   return (
-    <div>
+    <div className="edit-page">
       <h2>Edit Game</h2>
+
+      <img src={game.image} alt={game.title} width="300" />
 
       <form onSubmit={handleSubmit}>
         <p>{game.title}</p>
 
         <label>Status:</label>
-        <select value={status} onChange={(e) => setStatus(e.target.value)}>
-          <option value="Playing">Playing</option>
-          <option value="Finished">Finished</option>
-          <option value="Wishlist">Wishlist</option>
-        </select>
+
+        <div className="status-select-row">
+          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="Wishlist">Wishlist </option>
+            <option value="Playing">Playing </option>
+            <option value="Finished">Finished </option>
+          </select>
+
+          <span className={`status-circle ${status.toLowerCase()}`}></span>
+        </div>
 
         <br />
 
@@ -104,7 +111,7 @@ function EditGame() {
               <li key={index}>
                 {note}
                 <button type="button" onClick={() => handleDeleteNote(index)}>
-                  Delete
+                  X
                 </button>
               </li>
             );
