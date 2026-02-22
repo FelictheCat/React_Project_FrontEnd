@@ -44,6 +44,7 @@ function MyGames() {
   return (
     <div>
       <h2>My Games</h2>
+      <h4> Wishlist = 🔵 | Playing = 🟢 | Finished = 🟣 </h4>
       <div className="wrap-grid">
         {games.map((game) => {
           return (

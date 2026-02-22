@@ -80,7 +80,6 @@ a:hover {
   padding: 20px;
   min-width: 250px;
   max-width: 250px;
-  max-height: 450px;
   min-height: 450px;
   position: relative;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
@@ -91,13 +90,14 @@ a:hover {
 }
 
 .status-circle {
+  margin: 5px;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   position: absolute;
   top: 20px;
   right: 20px;
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .status-circle.wishlist {
