@@ -30,24 +30,35 @@ function GameDetails() {
   }
 
 return (
-  <div>
-    <div>
+  <div className="game-details">
+
+    <div className="details-title">
       <h2>{game.name}</h2>
-      <img src={game.background_image} alt={game.name} width="400" />
-    </div>
-    <div>
-      <h3>Rating:</h3>
-      <p>{game.rating}</p>
-    </div>
-    <div>
-      <h3>Released:</h3>
-      <p>{game.released}</p>
     </div>
 
-    <div>
+    <img
+      className="details-image"
+      src={game.background_image}
+      alt={game.name}
+    />
+
+    <div className="details-meta">
+      <div>
+        <p>Rating</p>
+        <p>{game.rating}</p>
+      </div>
+
+      <div>
+        <p>Released</p>
+        <p>{game.released}</p>
+      </div>
+    </div>
+
+    <div className="details-section">
       <h3>Description</h3>
       <p>{game.description_raw}</p>
     </div>
+
   </div>
 );
 }

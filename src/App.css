@@ -188,6 +188,42 @@ a:hover {
   transform: translateY(-1px);
 }
 
+.game-details {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.details-title {
+  background-color: #9f9006;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.details-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.details-meta {
+  display: flex;
+  justify-content: space-between;
+  background-color: #9f9006;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.details-section {
+  background-color: #9f9006;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+
 .game-title-row {
   display: flex;
   align-items: center;
