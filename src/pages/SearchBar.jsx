@@ -42,6 +42,7 @@ function Search() {
       image: game.background_image,
       status: "Wishlist",
       rating: 0,
+      stores: game.stores || []
     };
     axios
       .post(apiURL, newGame)

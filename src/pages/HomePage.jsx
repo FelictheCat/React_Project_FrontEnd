@@ -62,6 +62,7 @@ function HomePage() {
       image: game.background_image,
       status: "Wishlist",
       rating: game.rating,
+      stores: game.stores || []
     };
 
     axios

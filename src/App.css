@@ -45,6 +45,11 @@ a:hover {
   gap: 20px;
 }
 
+.sidebar-logo{
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .main-content {
   flex: 1;
   padding: 20px;
@@ -98,6 +103,7 @@ a:hover {
   top: 20px;
   right: 20px;
   border: 2px solid rgb(0, 0, 0);
+  pointer-events: none;
 }
 
 .status-circle.wishlist {
@@ -194,4 +200,21 @@ a:hover {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+
+.store-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.store-links a {
+  font-size: 13px;
+  text-decoration: underline;
+  pointer-events: auto;
+  cursor: pointer; 
 }

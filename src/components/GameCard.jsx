@@ -44,6 +44,48 @@ function GameCard({
         </div>
       )}
 
+      {game.status === "Wishlist" && game.stores && game.stores.length > 0 && (
+        <div className="store-links">
+          <h4>Available At:</h4>
+
+          {game.stores.map((item) => {
+            const name = item.store.name;
+            const slug = game.title || game.name;
+
+            let url = "";
+
+            if (name === "Steam") {
+              url = `https://store.steampowered.com/search/?term=${slug}`;
+            }
+
+            if (name === "PlayStation Store") {
+              url = `https://store.playstation.com/search/${slug}`;
+            }
+
+            if (name === "Xbox Store") {
+              url = `https://www.xbox.com/en-us/search?q=${slug}`;
+            }
+
+            if (name === "GOG") {
+              url = `https://www.gog.com/en/games?search=${slug}`;
+            }
+
+            if (!url) return null;
+
+            return (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+            );
+          })}
+        </div>
+      )}
+
       <div className="game-buttons">
         {showAddBtn && <button onClick={() => onAdd(game)}>Add</button>}
         {showDeleteBtn && (
